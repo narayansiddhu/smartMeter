@@ -16,7 +16,7 @@ class Tables extends React.Component {
   componentDidMount() {
     let options = {
       method: 'GET',
-      mode: 'cors',
+      mode: 'no-cors',
       headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json;charset=UTF-8'

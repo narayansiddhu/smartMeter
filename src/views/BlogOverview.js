@@ -22,7 +22,7 @@ class BlogOverview extends React.Component {
     // );
     let options = {
       method: 'GET',
-      mode: 'cors',
+      mode: 'no-cors',
       headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json;charset=UTF-8'
