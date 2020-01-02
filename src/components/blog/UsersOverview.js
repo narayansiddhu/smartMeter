@@ -84,7 +84,16 @@ class UsersOverview extends React.Component {
 
     // Render the chart.
     BlogUsersOverview.render();
-    axios.get(`http://18.136.149.198:3071/api/meterDataSummaries?filter[order]=Timestamp%20DESC&filter[limit]=1`)
+
+    let options = {
+      method: 'GET',
+      mode: 'cors',
+      headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json;charset=UTF-8'
+      },
+  };
+    axios(`http://18.136.149.198:3071/api/meterDataSummaries?filter[order]=Timestamp%20DESC&filter[limit]=1`,options)
       .then(res => {
         this.setState({ charData: res.data[0] })
       })
