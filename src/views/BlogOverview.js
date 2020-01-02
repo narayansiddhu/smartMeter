@@ -32,7 +32,7 @@ class BlogOverview extends React.Component {
     const chartData = this.state.charData
     const smallStats = [
       {
-        label: "Electricity (EB)",
+        label: "Electricity",
         value: Math.round(chartData.EB_DAY * 100) / 100 || "0",
         percentage: "4.7%",
         increase: true,
@@ -50,7 +50,7 @@ class BlogOverview extends React.Component {
         ]
       },
       {
-        label: "Generator (DG)",
+        label: "Generator",
         value: "182",
         percentage: "12.4",
         increase: true,
@@ -68,7 +68,7 @@ class BlogOverview extends React.Component {
         ]
       },
       {
-        label: "Tank water (TWM)",
+        label: "Domestic",
         value: "817",
         percentage: "3.8%",
         increase: false,
@@ -87,7 +87,7 @@ class BlogOverview extends React.Component {
         ]
       },
       {
-        label: "Drinking Water (GWM)",
+        label: "Drinking Water",
         value: Math.round(chartData.MWM_DAY * 100) / 100 || "0",
         percentage: "2.71%",
         increase: false,
@@ -106,7 +106,7 @@ class BlogOverview extends React.Component {
         ]
       },
       {
-        label: "Gas Meter (GM)",
+        label: "Gas",
         value: "172",
         percentage: "2.4%",
         increase: false,
@@ -125,8 +125,6 @@ class BlogOverview extends React.Component {
         ]
       }
     ]
-    const data = this.state.test
-    console.log("checking the data####", data)
     return (
       <Container fluid className="main-content-container px-4">
         {/* Page Header */}

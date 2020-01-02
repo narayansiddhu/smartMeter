@@ -1,9 +1,9 @@
 export default function () {
   return [
     {
-      title: "Meter Usage",
+      title: "Utility",
       to: "/blog-overview",
-      htmlBefore: '<i class="material-icons">edit</i>',
+      htmlBefore: '<i class="material-icons">dashboard</i>',
       htmlAfter: ""
     },
     {
