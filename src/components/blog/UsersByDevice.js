@@ -1,5 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
+import moment from 'moment'
+import axios from 'axios';
 import {
   Row,
   Col,
@@ -15,14 +17,55 @@ import Chart from "../../utils/chart";
 class UsersByDevice extends React.Component {
   constructor(props) {
     super(props);
+    this.state={
+      getchartData : {}
+    }
 
     this.canvasRef = React.createRef();
   }
 
-  componentDidMount() {
+  async componentDidMount() {
+    var date1 = moment().subtract(7, 'days').toString()
+    const startOfWeek = moment(date1).format('YYYY-MM-DD')+"T00:00:00.000+00:00";
+    const endOfWeek   = moment().format('YYYY-MM-DD')+"T23:59:59.999+00:00"; 
+    var startDate = moment(startOfWeek).format("x")
+    var endDate =  moment(endOfWeek).format("x")
+    var ebData = ""
+    var dataArr = []
+    var getData = await axios.get(`http://18.136.149.198:3071/api/meterDataSummaries?filter[where][Timestamp][between][0]=${startDate}&filter[where][Timestamp][between][1]=${endDate}`)
+    getData.data.map((list,i)=>{
+      if(i%2==0){
+       var value = Math.round(list.EB_DAY * 100) / 100
+       var oldValue = ebData
+       if(oldValue!=""){
+        ebData = parseInt(oldValue)+parseInt(value)
+       }else{
+        ebData = value
+       }     
+      }
+    })
+    dataArr.push(ebData)
+    dataArr.push(10)
+    var getchartData ={
+      title: "Energy Overview",
+      chartData: {
+        datasets: [
+          {
+            hoverBorderColor: "#ffffff",
+            data: dataArr,
+            backgroundColor: [
+              "rgba(0,123,255,0.9)",
+              "rgba(0,123,255,0.5)",
+            ]
+          }
+        ],
+        labels: ["Electricity", "Generator"]
+      }
+    }
+    this.setState({getchartData:getchartData})
     const chartConfig = {
       type: "pie",
-      data: this.props.chartData,
+      data: this.state.getchartData.chartData,
       options: {
         ...{
           legend: {
@@ -39,7 +82,7 @@ class UsersByDevice extends React.Component {
             position: "nearest"
           }
         },
-        ...this.props.chartOptions
+        ...this.state.getchartData
       }
     };
 
@@ -106,20 +149,19 @@ UsersByDevice.propTypes = {
 };
 
 UsersByDevice.defaultProps = {
-  title: "Users by device",
+  title: "Energy Overview",
   chartData: {
     datasets: [
       {
         hoverBorderColor: "#ffffff",
-        data: [68.3, 24.2, 7.5],
+        data: [68.3, 24.2],
         backgroundColor: [
           "rgba(0,123,255,0.9)",
           "rgba(0,123,255,0.5)",
-          "rgba(0,123,255,0.3)"
         ]
       }
     ],
-    labels: ["Desktop", "Tablet", "Mobile"]
+    labels: ["Electricity", "Generator"]
   }
 };
 

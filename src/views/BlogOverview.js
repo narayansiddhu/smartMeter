@@ -6,6 +6,8 @@ import PageTitle from "./../components/common/PageTitle";
 import SmallStats from "./../components/common/SmallStats";
 import UsersOverview from "./../components/blog/UsersOverview";
 import UsersByDevice from "./../components/blog/UsersByDevice";
+import GasOverView from "./../components/blog/GasOverview"
+import GasDevice from "./../components/blog/GasDevice"
 import NewDraft from "./../components/blog/NewDraft";
 import Discussions from "./../components/blog/Discussions";
 import TopReferrals from "./../components/common/TopReferrals";
@@ -32,7 +34,7 @@ class BlogOverview extends React.Component {
     const chartData = this.state.charData
     const smallStats = [
       {
-        label: "Electricity (EB)",
+        label: "Electricity",
         value: Math.round(chartData.EB_DAY * 100) / 100 || "0",
         percentage: "4.7%",
         increase: true,
@@ -50,8 +52,8 @@ class BlogOverview extends React.Component {
         ]
       },
       {
-        label: "Generator (DG)",
-        value: "182",
+        label: "Generator",
+        value: "10",
         percentage: "12.4",
         increase: true,
         chartLabels: [null, null, null, null, null, null, null],
@@ -68,7 +70,7 @@ class BlogOverview extends React.Component {
         ]
       },
       {
-        label: "Tank water (TWM)",
+        label: "Domestic",
         value: "817",
         percentage: "3.8%",
         increase: false,
@@ -87,7 +89,7 @@ class BlogOverview extends React.Component {
         ]
       },
       {
-        label: "Drinking Water (GWM)",
+        label: "Drinking Water",
         value: Math.round(chartData.MWM_DAY * 100) / 100 || "0",
         percentage: "2.71%",
         increase: false,
@@ -106,7 +108,7 @@ class BlogOverview extends React.Component {
         ]
       },
       {
-        label: "Gas Meter (GM)",
+        label: "Gas",
         value: "172",
         percentage: "2.4%",
         increase: false,
@@ -125,13 +127,11 @@ class BlogOverview extends React.Component {
         ]
       }
     ]
-    const data = this.state.test
-    console.log("checking the data####", data)
     return (
       <Container fluid className="main-content-container px-4">
         {/* Page Header */}
         <Row noGutters className="page-header py-4">
-          <PageTitle title="Project" subtitle="Dashboard" className="text-sm-left mb-3" />
+          <PageTitle title="Project" subtitle="Ycity Lora" className="text-sm-left mb-3" />
         </Row>
 
         {/* Small Stats Blocks */}
@@ -167,11 +167,11 @@ class BlogOverview extends React.Component {
         </Row>
         <Row>
           <Col lg="4" md="6" sm="12" className="mb-4">
-            <UsersByDevice />
+            <GasDevice />
           </Col>
           {/* Users Overview */}
           <Col lg="8" md="12" sm="12" className="mb-4">
-            <UsersOverview />
+            <GasOverView />
           </Col>
 
           {/* Users by Device */}

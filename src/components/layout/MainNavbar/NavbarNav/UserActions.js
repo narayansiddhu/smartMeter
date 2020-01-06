@@ -28,13 +28,17 @@ export default class UserActions extends React.Component {
   }
 
   render() {
+    const pStyle = {
+      'max-width': '70px'
+    };
     return (
       <NavItem tag={Dropdown} caret toggle={this.toggleUserActions}>
         <DropdownToggle caret tag={NavLink} className="text-nowrap px-3">
           <img
             className="user-avatar rounded-circle mr-2"
-            src="http://ycity.in/img/logo-w.png"
+            src={require("../../../../images/logo.png")}
             alt="User Avatar"
+            style={pStyle}
           />{" "}
           <span className="d-none d-md-inline-block">Settings </span>
         </DropdownToggle>

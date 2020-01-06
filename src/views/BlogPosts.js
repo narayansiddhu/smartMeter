@@ -20,8 +20,8 @@ class Tables extends React.Component {
           var arr = []
           res.data.map(list => {
             var obj = {}
-            obj.date = moment(list.Timestamp).format('YYYY-MM-DD hh:mm')
-            obj.EB = list.EB_DAY
+            obj.date = moment(list.Timestamp).format('YYYY-MM-DD hh:mm')  
+            obj.EB =  Math.round(list.EB_DAY * 100) / 100 
             obj.DG = list.DG_DAY
             obj.TWM = list.TWM_DAY
             obj.GWM = list.MWM_DAY
