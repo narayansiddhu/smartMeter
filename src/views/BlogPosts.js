@@ -14,7 +14,16 @@ class Tables extends React.Component {
     tableData: []
   }
   componentDidMount() {
-    axios.get(`http://18.136.149.198:3071/api/meterDataSummaries?filter[order]=Timestamp%20DESC`)
+    let options = {
+      method: 'GET',
+      mode: 'no-cors',
+      headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json;charset=UTF-8'
+      },
+  };
+
+    axios(`http://18.136.149.198:3071/api/meterDataSummaries?filter[order]=Timestamp%20DESC`,options)
       .then(res => {
         if (res.data.length > 0) {
           var arr = []

@@ -22,7 +22,15 @@ class BlogOverview extends React.Component {
     //   () => this.setState(prevState => ({ test: Math.random() })),
     //   1000,
     // );
-    axios.get(`http://18.136.149.198:3071/api/meterDataSummaries?filter[order]=Timestamp%20DESC&filter[limit]=1`)
+    let options = {
+      method: 'GET',
+      mode: 'no-cors',
+      headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json;charset=UTF-8'
+      },
+  };
+    axios(`http://18.136.149.198:3071/api/meterDataSummaries?filter[order]=Timestamp%20DESC&filter[limit]=1`,options)
       .then(res => {
         this.setState({ charData: res.data[0] })
       })
@@ -53,7 +61,11 @@ class BlogOverview extends React.Component {
       },
       {
         label: "Generator",
+<<<<<<< HEAD
         value: "10",
+=======
+        value: "182",
+>>>>>>> 5b65b5fb478828d435298232ebdc579f1634f166
         percentage: "12.4",
         increase: true,
         chartLabels: [null, null, null, null, null, null, null],

@@ -1,17 +1,32 @@
 {
+<<<<<<< HEAD
   "main.css": "./static/css/main.31c3316f.chunk.css",
   "main.js": "./static/js/main.130c7836.chunk.js",
   "main.js.map": "./static/js/main.130c7836.chunk.js.map",
   "static/css/1.08ee1cf9.chunk.css": "./static/css/1.08ee1cf9.chunk.css",
   "static/js/1.e6cdcfa6.chunk.js": "./static/js/1.e6cdcfa6.chunk.js",
   "static/js/1.e6cdcfa6.chunk.js.map": "./static/js/1.e6cdcfa6.chunk.js.map",
+=======
+  "main.css": "./static/css/main.d022096c.chunk.css",
+  "main.js": "./static/js/main.60dd373b.chunk.js",
+  "main.js.map": "./static/js/main.60dd373b.chunk.js.map",
+  "static/css/1.9196791a.chunk.css": "./static/css/1.9196791a.chunk.css",
+  "static/js/1.fbca9fb7.chunk.js": "./static/js/1.fbca9fb7.chunk.js",
+  "static/js/1.fbca9fb7.chunk.js.map": "./static/js/1.fbca9fb7.chunk.js.map",
+>>>>>>> 5b65b5fb478828d435298232ebdc579f1634f166
   "runtime~main.js": "./static/js/runtime~main.4a686d48.js",
   "runtime~main.js.map": "./static/js/runtime~main.4a686d48.js.map",
-  "static/media/shards-dashboards-logo.svg": "./static/media/shards-dashboards-logo.60a85991.svg",
   "static/media/0.jpg": "./static/media/0.73476783.jpg",
+<<<<<<< HEAD
   "static/css/main.31c3316f.chunk.css.map": "./static/css/main.31c3316f.chunk.css.map",
   "static/css/1.08ee1cf9.chunk.css.map": "./static/css/1.08ee1cf9.chunk.css.map",
   "index.html": "./index.html",
   "precache-manifest.7779602d431db4d0c220605bf22042a3.js": "./precache-manifest.7779602d431db4d0c220605bf22042a3.js",
+=======
+  "static/css/main.d022096c.chunk.css.map": "./static/css/main.d022096c.chunk.css.map",
+  "static/css/1.9196791a.chunk.css.map": "./static/css/1.9196791a.chunk.css.map",
+  "index.html": "./index.html",
+  "precache-manifest.1c2ff0e88d5ed9ae03b6f853f4428395.js": "./precache-manifest.1c2ff0e88d5ed9ae03b6f853f4428395.js",
+>>>>>>> 5b65b5fb478828d435298232ebdc579f1634f166
   "service-worker.js": "./service-worker.js"
 }
